@@ -1,0 +1,1658 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+
+
+:root{
+    --color-1: #094067;
+	--color-2: #3DA9FC;
+	--color-3: #EF4565;
+	--color-4: #90B4CE;
+	--color-5: #FFFFFE;
+    --color-6: #b1f0f2;
+    --color-7: #251D3A;
+    --color-8: #004fe8 ;
+
+    --font-1: 'Dosis', sans-serif;
+    --font-2: 'Montserrat', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+a, button{
+    transition: all .5s ease;
+    text-decoration: none;
+}
+a:hover, button:hover{
+    transform: translate(.2rem,-.2rem);
+}
+
+header{
+    background-color: var(--color-2);
+    z-index: 10;
+}
+header .container nav{
+    display: flex;
+    justify-content: space-between;
+}
+header .container nav a.navbar-brand,
+footer .head .container .head__block a.navbar-brand{
+    text-decoration: none;
+    color: var(--color-5);
+    font-family: var(--font-1);
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 500;
+}
+header .container nav a.navbar-brand:hover,
+footer .head .container .head__block a.navbar-brand:hover{
+    transform: translate(0);
+}
+header .container nav a.navbar-brand img,
+footer .head .container .head__block a.navbar-brand img{
+    width: 2.5rem;
+    margin-right: 1rem;
+} 
+header .container nav ul.menu{
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+header .container nav ul.menu li:not(:first-child){
+    margin-left: 4rem;
+}
+header .container nav ul.menu li{
+    display: flex;
+}
+header .container nav ul.menu li a{
+    text-decoration: none;
+    color: var(--color-5);
+    font-size: 1.2rem;
+    font-family: var(--font-2);
+}
+header .container nav .toggle{
+    display: none;
+}
+header .container nav .actions{
+    display: flex;
+}
+header .container nav .actions a{
+    margin-left: 1rem;
+}
+header .container nav .actions a.shoppingCart span{
+    display: none;
+}
+header .container nav .actions a.shoppingCart.active{
+    position: relative;
+}
+header .container nav .actions a.shoppingCart.active span{
+    display: unset;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: var(--color-3);
+    color: var(--color-5);
+    border-radius: 50%;
+    height: .8rem;
+    width: .8rem;
+    font-size: .6rem;
+    font-weight: 700;
+    text-align: center;
+}
+header .container nav .user{
+    position: relative;
+    margin-left: 1rem;
+}
+header .container nav .user button{
+    background: none;
+    border: none;
+}
+header .container nav .user button img{
+    width: 2rem;
+}
+header .container nav .user ul.userActions,
+header .container nav .search .searchBlock{
+    position: absolute;
+    right: 0;
+    top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-4);
+    transition: all .5s ease;
+    padding: 0;
+    color: var(--color-5);
+    overflow: hidden;
+    margin: 0;
+    transform: translate(1rem,-1rem);
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 10px 0 10px 10px;
+    -webkit-box-shadow: -4px 4px 10px 3px rgba(255, 255, 255, 0.2);
+    -moz-box-shadow: -4px 4px 10px 3px rgba(255, 255, 255, 0.2);
+    box-shadow: -4px 4px 10px 3px rgba(255, 255, 255, 0.2);
+}
+header .container nav .user ul.userActions.active,
+header .container nav .search.active .searchBlock{
+    transform: translate(0);
+    opacity: 1;
+    visibility: visible;
+}
+header .container nav .user ul.userActions li{
+    display: flex;
+    justify-content: center;
+}
+header .container nav .user ul.userActions li a,
+header .container nav .user ul.userActions li form button{
+    transition: all .5s ease;
+    font-size: 1rem;
+    font-family: var(--font-2);
+    padding: .5rem 1.5rem;
+    white-space: nowrap;
+    flex: 1 1 auto;
+    text-align: center;
+    text-decoration: none;
+    color: var(--color-5);
+    font-weight: 500;
+    margin: 0;
+}
+header .container nav .user ul.userActions li a:hover{
+    background-color: var(--color-5);
+    color: var(--color-1);
+}
+header .container nav .user ul.userActions li a:hover,
+header .container nav .user ul.userActions li form button:hover{
+    transform: translate(0);
+}
+header .container nav .user ul.userActions li form button:hover{
+    background-color: var(--color-3);
+}
+header .container nav .user ul.userActions li form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+header .container nav .search{
+    position: relative;
+}
+header .container nav .search button{
+    background: none;
+    border: none;
+}
+header .container nav .search .searchBlock form{
+    display: flex;
+    padding: .2rem;
+}
+header .container nav .search .searchBlock form input{
+    border-radius: 10px;
+    border:none;
+    padding: .3rem .5rem;
+}
+
+section.hello{
+    position: relative;
+    min-height: calc(100vh - 5rem);
+    background-image: url("../img/config/hello.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+}
+section.hello .blur{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,.1);
+    z-index: 1;
+}
+section.hello .container{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 2rem;
+    align-items: flex-start;
+    flex: 1 1 auto;
+}
+section.hello .container .hello_block{
+    position: relative;
+    z-index: 2;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-4);
+    padding: 2rem;
+    border-radius: 10px;
+}
+section.hello .container .hello_block .title{
+    font-size: 3rem;
+    font-family: var(--font-1);
+    color: var(--color-5);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+section.hello .container .hello_block .desc{
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: var(--font-2);
+    margin-bottom: 1.5rem;
+}
+section.hello .container .hello_block a{
+    display: flex;
+    padding: .5rem 2rem;
+    border-radius: 10px;
+    background-color: var(--color-5);
+    color: #094067;
+    font-family: var(--font-2);
+    font-weight: 500;
+}
+section.hello .container .hello_block a:hover{
+    background-color: var(--color-1);
+    color: var(--color-5);
+}
+
+section .container .nothingFoundBlock{
+    display: flex;
+    flex: 1 1 auto;
+    margin-top: 2rem;
+    justify-content: center;
+}
+section .container .nothingFound{
+    text-align: center;
+    font-size: 3rem;
+    font-family: var(--font-2);
+    color: var(--color-3);
+}
+
+section.shop .container,
+section.shop .container .shopBlock{
+    display: flex;
+    flex-direction: column;
+}
+section.shop .container{
+    padding: 0 0 2rem;
+}
+section.shop .container .filters form{
+    display: flex;
+    justify-content: flex-end;
+}
+section.shop .container .filters form .filterBlock{
+    display: flex;
+    padding: .5rem;
+    background-color: var(--color-1);
+    color: var(--color-5);
+    font-family: var(--font-2);
+    font-size: 1.1rem;
+}
+section.shop .container .filters form .filterBlock{
+    margin-left: 1rem;
+}
+section.shop .container .filters form .filterBlock .name{
+    padding: .5rem;
+}
+section.shop .container .filters form .filterBlock select{
+    border: none;
+    margin-left: .5rem;
+    padding: 0 .5rem;
+}
+section.shop .container .filters form button{
+    background-color: var(--color-2);
+    color: var(--color-5);
+    font-family: var(--font-2);
+    font-weight: 500;
+    border: none;
+    padding: .5rem 1rem;
+    margin-left: 1rem;
+}
+section.shop .container .shopBlock{
+    margin-top: 2rem;
+}
+section.shop .container .shopBlock .title{
+    font-size: 1.6rem;
+    font-family: var(--font-1);
+    font-weight: 500;
+    margin-bottom: .5rem;
+    text-align: left;
+}
+section.shop .container .shopBlock .products{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 1.5rem;
+}
+section.shop .container .shopBlock .products .product{
+    display: flex;
+    flex-direction: column;
+    transition: all .5s ease-in-out;
+    text-decoration: none;
+}
+section.shop .container .shopBlock .products .product:hover{
+    transform: translate(0) scale(1.05);
+}
+section.shop .container .shopBlock .products .product .product__photo{
+    min-height: 20rem;
+    border-radius: 10px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+section.shop .container .shopBlock .products .product .product__photo img{
+    display: none;
+}
+section.shop .container .shopBlock .products .product .product__title{
+    padding: .5rem .1rem 0;
+}
+section.shop .container .shopBlock .products .product .product__title,
+section.shop .container .shopBlock .products .product .product__price{
+    font-family: var(--font-2);
+    color: black;
+    font-size: 1rem;
+}
+section.shop .container .shopBlock .products .product .product__price{
+    margin-left: auto;
+    font-weight: 500;
+    font-size: 1.5rem;
+    font-family: var(--font-1);
+}
+
+section.about .container{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    align-items: center;
+}
+section.about .container .title,
+section.contacts .container .title,
+section.shop .container .title,
+section.cart .container .title,
+section.order .container .title{
+    text-align: center;
+    margin: 1.5rem 0;
+    font-size: 2rem;
+    font-family: var(--font-1);
+    font-weight: 700;
+}
+section.about .container .about__block,
+section.contacts .container .block{
+    display: flex;
+    padding: 0 5rem;
+}
+section.about .container .about__block .text{
+    flex: 2;
+}
+section.about .container .about__block .photo{
+    margin-right: 1rem;
+    flex: 1;
+    display: flex;
+    min-height: 20rem;
+    background-image: url("../img/config/logo.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+section.about .container .about__block .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+section.about .container .about__block .text .title{
+    font-family: var(--font-1);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+section.about .container .about__block .text p{
+    margin: 0;
+    font-family: var(--font-2);
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+
+section.contacts .container{
+    display: flex;
+    margin-bottom: 2rem;
+}
+section.contacts .container .block{
+    flex: 1 1 auto;
+}
+section.contacts .container .block .contacts__block{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+section.contacts .container .block .contacts__block ul{
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 0;
+    padding: 0 0 0 1rem;
+}
+section.contacts .container .block .contacts__block.contacts ul{
+    flex-direction: column;
+}
+section.contacts .container .block .contacts__block ul li:not(:first-child){
+    margin-left: 2rem;
+}
+section.contacts .container .block .contacts__block.contacts ul li:not(:first-child){
+    margin: 1rem 0 0;
+}
+section.contacts .container .block .contacts__block ul.media{
+    padding: .5rem;
+    border-radius: 10px;
+    background-color: var(--color-6);
+    margin-top: 2rem;
+}
+section.contacts .container .block .contacts__block ul.media li:not(:first-child){
+    margin-left: 1rem;
+}
+section.contacts .container .block .contacts__block ul li a{
+    display: flex;
+    align-items: center;
+    color: black;
+    font-size: 1.3rem;
+    font-family: var(--font-2);
+}
+section.contacts .container .block .contacts__block ul li a img{
+    margin-right: 1rem;
+}
+section.contacts .container .block .contacts__block ul.media li a img{
+    margin: 0;
+}
+section.contacts .container .block .contacts__block .title{
+    font-size: 2rem;
+    margin: 0;
+}
+section.contacts .container .block .contacts__block ul li a img{
+    width: 2.5rem;
+}
+
+section.product .container{
+    display: flex;
+    padding: 1rem .5rem;
+}
+section.product .container .photo,
+section.product .container .info{
+    flex: 1;
+}
+section.product .container .photo{
+    position: relative;
+    min-height: 10rem;
+    margin-right: 2rem;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: zoom-in;
+}
+section.product .container .photo img{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: all .2s ease;
+}
+section.product .container .photo.active{
+    cursor: zoom-out;
+}
+section.product .container .photo.active img{
+    transform: scale(1.2);
+}
+section.product .container .info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+section.product .container .info .info_row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+section.product .container .info .info_row .amount{
+    padding: 0rem 4rem;
+    border: .05rem solid var(--color-4);
+    color: black;
+    position: relative;
+}
+section.product .container .info .info_row .amount span{
+    font-family: var(--font-1);
+    font-weight: 500;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+}
+section.product .container .info .info_row .amount span.m,
+section.product .container .info .info_row .amount span.b{
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+    height: 100%;
+    padding: .3rem 1rem .7rem 1rem;
+    vertical-align: middle;
+}
+section.product .container .info .info_row .amount.noactive span{
+    cursor: default;
+}
+section.product .container .info .info_row .amount span.m{
+    left: 0;
+}
+section.product .container .info .info_row .amount span.b{
+    right: 0;
+}
+section.product .container .info .info_row .size{
+    display: flex;
+}
+section.product .container .info .info_row .size button:not(:first-child){
+    margin-left: 1rem;
+}
+section.product .container .info .info_row .size button{
+    border: .05rem solid var(--color-2);
+    color: var(--color-1);
+    transition: all .5s ease;
+    background: none;
+    padding: .5rem 1rem;
+}
+section.product .container .info .info_row .size button:hover,
+section.product .container .info .info_row .size button.active,
+section.product .container .info .info_row .size button.active:hover{
+    background-color: var(--color-1);
+    color: var(--color-2);
+}
+section.product .container .info .info_row .size.noactive button:hover{
+    cursor: default;
+    transform: translate(0);
+    border: .05rem solid var(--color-2);
+    color: var(--color-1);
+    background: none;
+}
+section.product .container .info .info_row .size.noactive button.active:hover{
+    background: var(--color-1);
+    color: var(--color-2);
+}
+section.product .container .info .name{
+    text-align: center;
+    font-size: 2rem;
+    font-family: var(--font-2);
+    margin-bottom: 2rem;
+}
+section.product .container .info .material{
+    font-family: var(--font-2);
+    text-align: center;
+    color: var(--color-1);
+    font-weight: 300;
+}
+section.product .container .info .desc{
+    font-family: var(--font-2);
+    margin-bottom: 2rem;
+}
+section.product .container .info .price{
+    text-align: right;
+    font-family: var(--font-1);
+    font-size: 2rem;
+}
+section.product .container .info form{
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+section.product .container .info form.noactive{
+    display: none;
+}
+section.product .container .info form button,
+section.product .container .info a.cart,
+section.cart .container a.order{
+    background: none;
+    border: .05rem solid var(--color-2);
+    color: black;
+    padding: .5rem 1rem;
+    font-family: var(--font-2);
+    font-weight: 500;
+    margin-left: auto;
+}
+section.product .container .info a.cart{
+    display: none;
+}
+section.product .container .info a.cart.active{
+    display: unset;
+}
+section.product .container .info form button:hover,
+section.product .container .info a.cart:hover,
+section.cart .container a.order:hover,
+section.success .container .block .form__block form button:hover{
+    background-color: var(--color-2);
+    border-color: var(--color-2);
+    color: var(--color-5);
+}
+
+section.cart .container{
+    display: flex;
+    flex-direction: column;
+}
+section.cart .container .title{
+    margin: 1.5rem 0;
+}
+section.cart .container a.order,
+section.order .container .order__block .contacts form button{
+    margin: 1rem auto;
+    padding: .7rem 5rem;
+    font-size: 1.5rem;
+    font-family: var(--font-2);
+}
+section.cart .container a.order:hover,
+section.order .container .order__block .contacts form button:hover{
+    background-color: var(--color-1);
+}
+section.cart .container table{
+    font-family: var(--font-2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+section.cart .container table thead{
+    background-color: var(--color-1);
+    color: var(--color-5);
+    border: none;
+    font-weight: 400;
+}
+section.cart .container table tr .textCenter{
+    text-align: center;
+}
+section.cart .container table thead tr th{
+    font-weight: 500;
+    font-family: var(--font-1);
+    padding: .5rem 1rem;
+    font-size: 1.3rem;
+}
+section.cart .container table tbody tr td{
+    vertical-align: middle;
+}
+section.cart .container table tbody tr td .block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+section.cart .container table tbody tr td.item .block{
+    justify-content: unset;
+    align-items: unset;
+}
+section.cart .container table tbody tr td.item .photo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 6rem;
+    width: 6rem;
+    margin-right: 1rem;
+}
+section.cart .container table tbody tr td.item .photo img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+section.cart .container table tbody tr td.item .info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+section.cart .container table tbody tr td.item .info .name{
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: var(--font-2);
+}
+section.cart .container table tbody tr td.item .info .size span{
+    font-weight: 500;
+}
+section.cart .container table tbody tr td.item .info .num{
+    font-size: .8rem;
+}
+section.cart .container table tbody tr td.price,
+section.cart .container table tbody tr td.total,
+section.cart .container table tfoot tr td.total,
+section.cart .container table tfoot tr td{
+    font-weight: 700;
+    font-family: var(--font-1);
+    font-size: 1.3rem;
+}
+section.cart .container table tbody tr td.quantity{
+    font-size: 1.5rem;
+    font-family: var(--font-1);
+    font-weight: 500;
+}
+section.cart .container table tbody tr td.remove img{
+    cursor: pointer;
+    width: 2rem;
+    transition: all .5s ease;
+}
+section.cart .container table tbody tr td.remove img:hover{
+    transform: scale(1.1);
+}
+section.cart .container table tfoot tr td{
+    font-family: var(--font-1);
+    border: none;
+}
+section.cart .container table tfoot tr td:first-child{
+    padding-left: 1rem;
+}
+section.cart .container table tfoot tr td span.num{
+    margin-left: 2rem;
+}
+.table > :not(:first-child){
+    border: none;
+}
+
+section.order .container{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+section.order .container .order__block{
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+section.order .container .order__block .contacts,
+section.order .container .order__block .shoppingCart{
+    flex: 1;
+    background-color: var(--color-5);
+    border-radius: 10px;
+    padding: 1rem;
+    -webkit-box-shadow: 1px 1px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 1px 1px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 1px 1px 8px 0px rgba(34, 60, 80, 0.2);
+}
+section.order .container .order__block .shoppingCart{
+    margin-left: 1.5rem;
+}
+section.order .container .order__block .shoppingCart .products{
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    border-radius: 10px;
+}
+section.order .container .order__block .shoppingCart .products.scroll{
+    overflow-y: scroll;
+}
+section.order .container .order__block .shoppingCart .products .top{
+    display: flex;
+    margin-top: 1rem;
+}
+section.order .container .order__block .shoppingCart .products .product{
+    margin-top: 1rem;
+    display: flex;
+}
+section.order .container .order__block .shoppingCart .products .product .photo{
+    border-radius: 10px;
+    overflow: hidden;
+    height: 5rem;
+}
+section.order .container .order__block .shoppingCart .products .top .photo,
+section.order .container .order__block .shoppingCart .products .product .photo{
+    width: 5rem;
+}
+section.order .container .order__block .shoppingCart .products .product .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+section.order .container .order__block .shoppingCart .products .product .total,
+section.order .container .order__block .shoppingCart .products .top .total{
+    margin-right: 1rem;
+}
+section.order .container .order__block .shoppingCart .products .product .total,
+section.order .container .order__block .shoppingCart .products .product .amount,
+section.order .container .order__block .shoppingCart .products .product .price,
+section.order .container .order__block .shoppingCart .products .product .name,
+section.order .container .order__block .shoppingCart .products .top .total,
+section.order .container .order__block .shoppingCart .products .top .amount,
+section.order .container .order__block .shoppingCart .products .top .price,
+section.order .container .order__block .shoppingCart .products .top .name{
+    font-family: var(--font-1);
+    font-weight: 500;
+    font-size: 1.2rem;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section.order .container .order__block .shoppingCart .products .product .amount,
+section.order .container .order__block .shoppingCart .products .product .price{
+    flex: 1;
+}
+section.order .container .order__block .shoppingCart .products .top .name,
+section.order .container .order__block .shoppingCart .products .product .name{
+    font-family: var(--font-2);
+    margin-right: auto;
+    font-size: 1rem;
+    flex: 2;
+    padding: 0 1rem;
+}
+section.order .container .order__block .shoppingCart .products .product .name{
+    font-weight: 400;
+    justify-content: flex-start;
+    padding: .5rem 1rem;
+    align-items: unset;
+    word-break: break-all;
+}
+section.order .container .order__block .shoppingCart .totalPrice{
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: space-between;
+    margin: 2rem 1.5rem 0 0;
+    font-family: var(--font-1);
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+section.order .container .order__block .shoppingCart .totalPrice.active{
+    margin-right: 2.8rem;
+}
+section.order .container .order__block .title{
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 500;
+}
+section.order .container .order__block .contacts{
+    flex: 0 0 50%;
+}
+section.order .container .order__block .contacts form{
+    display: flex;
+    flex-direction: column;
+}
+section.order .container .order__block .contacts form input,
+section.order .container .order__block .contacts form textarea{
+    width: 100%;
+    border-radius: 10px;
+    padding: .5rem;
+    border: .05rem solid var(--color-4);
+    font-family: var(--font-2);
+}
+section.order .container .order__block .contacts form .input_block:not(:first-child){
+    margin-top: 1rem;
+}
+section.order .container .order__block .contacts form .input_block{
+    display: flex;
+    flex-direction: column;
+}
+section.order .container .order__block .contacts form .input_block p{
+    margin: 0 0 .2rem .2rem;
+    font-family: var(--font-2);
+    font-weight: 500;
+    position: relative;
+    margin-right: auto;
+}
+section.order .container .order__block .contacts form .input_block p.s::after{
+    position: absolute;
+    content: "*";
+    color: var(--color-3);
+    top: 0;
+    right: -.5rem;
+}
+section.order .container .order__block .contacts form button,
+section.success .container .block .form__block form button{
+    margin: 1.5rem auto 0;
+    border: none;
+    font-size: 1rem;
+    padding: .5rem 1.5rem;
+    color: black;
+    font-weight: 500;
+    background: none;
+    border: .05rem solid var(--color-2);
+}
+section.order .container .order__block .contacts form button:hover{
+    color: var(--color-5);
+    transform: translate(0);
+    padding: .5rem 3rem;
+}
+
+section.success,
+section.admin{
+    background-image: url("../img/config/hello.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    flex: 1 1 auto;
+}
+section.success .blur,
+section.admin .blur{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255,255,254,.9);
+    z-index: 1;
+}
+section.success .container{
+    position: relative;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+section.success .container .block{
+    padding: 2rem;
+    background-color: var(--color-5);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+section.success .container .block .photo{
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+section.success .container .block .title{
+    font-family: var(--font-2);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+section.success .container .block .desc{
+    font-size: 1.3rem;
+    font-family: var(--font-2);
+    text-align: center;
+    margin: 0;
+}
+section.success .container .block .photo img{
+    width: 10rem;
+}
+section.success .container .block .successBtn{
+    margin: 1rem auto 0;
+    padding: .5rem 1.5rem;
+    border-radius: 30px;
+}
+section.success .container .block .successBtn:hover{
+    background-color: var(--color-1);
+    color: var(--color-5);
+}
+section.success .container .block .form__block,
+section.success .container .block .form__block form,
+section.success .container .block .form__block form .formInput{
+    display: flex;
+    flex-direction: column;
+}
+section.success .container .block .form__block .photo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section.success .container .block .form__block .photo img{
+    width: 5rem;
+    margin-right: 2rem;
+}
+section.success .container .block .form__block .photo .name{
+    font-family: var(--font-1);
+    margin: 0;
+    font-size: 2.5rem;
+}
+section.success .container .block .form__block .title{
+    font-family: var(--font-2);
+    font-weight: 400;
+    margin-bottom: unset;
+}
+section.success .container .block .form__block form .formInput{
+    position: relative;
+    margin-top: 1rem;
+}
+section.success .container .block .form__block form .formInput label{
+    margin-bottom: .2rem;
+    font-family: var(--font-2);
+}
+section.success .container .block .form__block form .formInput img{
+    position: absolute;
+    top: 50%;
+    left: .45rem;
+    width: 1.5rem;
+}
+section.success .container .block .form__block form .formInput input{
+    padding: .5rem .5rem .5rem 2rem;
+    border-radius: 10px;
+    border: .05rem solid var(--color-4);
+}
+section.success .container .block .form__block form button{
+    margin: 1rem auto 0;
+}
+section.success .container .block .form__block .error{
+    padding: .5rem;
+    display: none;
+    justify-content: space-between;
+    margin-top: 1rem;
+    border-radius: 10px;
+    background-color: var(--color-3);
+    color: var(--color-5);
+    align-items: center;
+}
+section.success .container .block .form__block .error.active{
+    display: flex;
+}
+section.success .container .block .form__block .error img{
+    width: 1.5rem;
+}
+
+section.admin .container{
+    position: relative;
+    z-index: 2;
+}
+section.admin .container .block{
+    display: flex;
+    margin: 1.5rem 0;
+}
+section.admin .container .buttn{
+    color: var(--color-5);
+    background-color: var(--color-8);
+    flex: 1 1 auto;
+    text-align: center;
+    padding: .5rem;
+    border-radius: 10px;
+    margin-top: .5rem;
+    font-family: var(--font-2);
+    position: relative;
+}
+section.admin .container .buttn img{
+    position: absolute;
+    width: 2rem;
+    left: .5rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+section.admin .container aside{
+    flex: 1;
+    padding: 1rem;
+    background-color: var(--color-7);
+    border-radius: 10px 0 0 10px;
+}
+section.admin .container section.content{
+    flex: 3;
+    padding: 1rem;
+    border-radius: 0 10px 10px 0;
+    background-color: var(--color-5);
+}
+section.admin .container aside a.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+section.admin .container aside a.logo:hover{
+    transform: translate(0);
+}
+section.admin .container aside a.logo img{
+    width: 3rem;
+    margin-right: 1rem;
+}
+section.admin .container aside a.logo .name{
+    font-family: var(--font-1);
+    font-size: 2rem;
+    color: var(--color-5);
+}
+section.admin .container aside ul.actions{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+section.admin .container aside ul.actions li{
+    width: 100%;
+    display: flex;
+}
+section.admin .container section.content .content__block{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+section.admin .container section.content .content__block.active{
+    display: flex;
+}
+section.admin .container section.content .content__block .title{
+    text-align: center;
+    font-size: calc(1.5rem + (16 + 16*0.7) * ((100vw - 320px) / 1280));
+    font-family: var(--font-2);
+    font-weight: 500;
+    margin: 1rem 0 2rem;
+}
+section.admin .container section.content .content__block#getStarted h3{
+    margin-top: 2rem;
+    font-size: 1.3rem;
+    font-family: var(--font-2);
+    line-height: 2rem;
+    text-align: center;
+}
+section.admin .container section.content .content__block#getStarted p{
+    margin-top: 1rem;
+    text-align: center;
+}
+section.admin .container section.content .btns{
+    width: 50%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+section.admin .container section.content .btns button{
+    margin-top: .5rem;
+    width: 100%;
+}
+section.admin .container section.content table{
+    background-color: var(--color-5);
+    font-family: var(--font-2);
+    font-size: .9rem;
+    border-radius: 10px;
+    overflow: hidden;
+    -webkit-box-shadow: 2px 2px 10px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 2px 2px 10px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 2px 2px 10px 0px rgba(34, 60, 80, 0.2);
+}
+section.admin .container section.content .paginationBtns{
+    margin-top: 3rem;
+    border-radius: 10px;
+    display: flex;
+    overflow: hidden;
+}
+section.admin .container section.content .paginationBtns button{
+    color: var(--color-5);
+    padding: .5rem 1rem;
+    font-family: var(--font-2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all .5s ease;
+    border: none;
+    background-color: var(--color-8);
+}
+section.admin .container section.content .paginationBtns button.noactive,
+section.admin .container section.content .paginationBtns button.noactive:hover{
+    background-color: #ddd;
+    color: var(--color-7);
+}
+section.admin .container section.content .paginationBtns button.noactive:hover{
+    cursor: default;
+}
+section.admin .container section.content .paginationBtns button:hover{
+    background-color: var(--color-1);
+    transform: translate(0);
+}
+section.admin .container section.content .paginationBtns button:not(:first-child){
+    border-left: .05rem solid #dddddd;
+}
+section.admin .container section.content table tr:not(:first-child){
+    border-top: .05rem solid #e4e4e4;
+}
+section.admin .container section.content table thead tr td{
+    font-weight: 500;
+    font-family: var(--font-2);
+}
+section.admin .container section.content table tr td{
+    border-bottom: none;
+    vertical-align: middle;
+    font-weight: 500;
+}
+section.admin .container section.content table tr td.act{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+section.admin .container section.content table tr td a:not(a.view){
+    text-decoration: none;
+    border-radius: 10px;
+    padding: .5rem;
+    color: var(--color-8);
+}
+section.admin .container section.content table tr td a.view{
+    margin-right: .5rem;
+}
+section.admin .container section.content table tr td a,
+section.admin .container section.content table tr td button,
+section.admin .container section.content .applicationAbout .applicationAbout__row a,
+section.admin .container section.content .applicationAbout .applicationAbout__row.submit button{
+    transition: all .4s ease;
+}
+section.admin .container section.content table tr td button{
+    border: .05rem solid #e4e4e4;
+    padding: 0;
+    background: none;
+}
+section.admin .container section.content table tr td button img{
+    opacity: 0;
+    transition: all .4s ease-in;
+}
+section.admin .container section.content table tr td a:hover,
+section.admin .container section.content table tr td button:hover,
+section.admin .container section.content form#personalSettings a.passwordRecoveryOpen:hover,
+section.admin .container section.content .applicationAbout .applicationAbout__row a:hover,
+section.admin .container section.content .applicationAbout .applicationAbout__row.submit button:hover{
+    transform: translate(0,-.2rem);
+}
+section.admin .container section.content table tr td a:hover:not(a.view),
+section.admin .container section.content form#personalSettings a.passwordRecoveryOpen:hover,
+section.admin .container section.content .applicationAbout .applicationAbout__row a:hover{
+    background-color: var(--color-8);
+    color: var(--color-5);
+}
+section.admin .container section.content table tr td button:hover img{
+    opacity: 1;
+}
+section.admin .container section.content table tr td img{
+    width: 1.5rem;
+}
+section.admin .container section.content form#settingsForm,
+section.admin .container section.content form#personalSettings{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+} 
+section.admin .container section.content form#settingsForm button,
+section.admin .container section.content form#personalSettings button{
+    margin: 1.5rem auto 0;
+    border: none;
+}
+section.admin .container section.content form#personalSettings a.passwordRecoveryOpen{
+    margin: 0;
+    transition: all .4s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--color-1);
+    width: 50%;
+}
+section.admin .container section.content .content__block__child{
+    display: flex;
+    flex: 1 1 auto;
+    background-color: var(--color-5);
+    padding: .5rem 1rem;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+    -webkit-box-shadow: 2px 2px 10px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 2px 2px 10px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 2px 2px 10px 0px rgba(34, 60, 80, 0.2);
+}
+section.admin .container section.content .content__block__child.passwordRecovery{
+    flex-direction: column;
+    position: relative;
+    background: none;
+    padding: 0;
+}
+section.admin .container section.content .content__block__child.passwordRecovery .head{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: .5rem;
+    padding: .5rem 1rem;
+    border-radius: 10px;
+    background-color: var(--color-5);
+    transition: all .7s ease;
+    z-index: 2;
+}
+section.admin .container section.content .content__block__child.passwordRecovery .head.active{
+    border-radius: 10px 10px 0 0;
+}
+section.admin .container section.content .content__block__child.passwordRecovery .head button{
+    width: 50%;
+}
+section.admin .container section.content .content__block__child.passwordRecovery .passwordRecovery{
+    padding-top: 1rem;
+    transition: all .7s ease;
+    z-index: -1;
+    border-top: .05rem solid #f1f1f1;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: var(--color-5);
+    padding-bottom: 1rem;
+    display: none;
+    border-radius: 0 0 10px 10px;
+}
+section.admin .container section.content .content__block__child.passwordRecovery .passwordRecovery.active{
+    display: unset;
+}
+section.admin .container section.content .content__block__child.passwordRecovery .passwordRecovery .inputBlock{
+    display: flex;
+}
+section.admin .container section.content .content__block__child.passwordRecovery .passwordRecovery .inputBlock:not(:first-child){
+    margin-top: 1rem;
+}
+section.admin .container section.content .content__block__child.passwordRecovery .passwordRecovery .inputBlock p{
+    width: 50%;
+    justify-content: center;
+}
+section.admin .container section.content .content__block__child.passwordRecovery .passwordRecovery .inputBlock p.error{
+    color: red;
+}
+section.admin .container section.content .content__block__child.passwordRecovery .passwordRecovery .inputBlock .input{
+    width: 25%;
+    margin: 0 auto;
+    position: relative;
+}
+section.admin .container section.content .content__block__child.passwordRecovery .passwordRecovery .inputBlock .input .passwordImg{
+    font-size: 1.5rem;
+    width: 1.7rem;
+    cursor: pointer;
+    position: absolute;
+    right: .5rem;
+    top: 50%;
+    transform: translate(0,-50%);
+    display: none;
+}
+section.admin .container section.content .content__block__child.passwordRecovery .passwordRecovery .inputBlock .input .passwordImg.active{
+    display: unset;
+}
+section.admin .container section.content .content__block__child.passwordRecovery .passwordRecovery input{
+    width: 100%;
+    padding-right: 2.2rem;
+    border: .1rem solid transparent;
+}
+section.admin .container section.content .content__block__child.passwordRecovery .passwordRecovery input.error{
+    border-color: red;
+}
+section.admin .container section.content .content__block__child.passwordRecovery button{
+    width: 100%;
+}
+section.admin .container section.content .content__block__child:not(:first-child){
+    margin-top: 1rem;
+}
+section.admin .container section.content .content__block__child p{
+    margin: 0;
+    font-family: var(--font-2);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+section.admin .container section.content .content__block__child p img,
+section.admin .container section.content .content__block__child button img{
+    width: 2rem;
+    margin-right: 1rem;
+}
+section.admin .container section.content form#personalSettings a.passwordRecoveryOpen img{
+    width: 1.5rem;
+    margin-right: 1rem;
+}
+section.admin .container section.content .content__block__child input,
+section.admin .container section.content .content__block__child textarea,
+section.admin .container section.content form#personalSettings a.passwordRecoveryOpen{
+    padding: .5rem;
+    text-align: center;
+    border: none;
+    background-color: #00000008;
+    border-radius: 10px;
+    font-family: var(--font-1);
+}
+section.admin .container section.content .content__block__child input,
+section.admin .container section.content .content__block__child textarea{
+    width: 50%;
+}
+section.admin .container section.content .content__block__child textarea{
+    min-height: 10rem;
+    text-align: left;
+    padding: 1rem;
+}
+
+section.admin .container section.content .applicationAbout{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row{
+    margin-top: 1rem;
+    background-color: var(--color-5);
+    color: var(--color-1);
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem .5rem .5rem 1rem;
+    border-radius: 10px;
+    align-items: center;
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row:not(:last-child),
+section.admin .container section.content #addgoods .form__block:not(:last-child){
+    -webkit-box-shadow: 2px 2px 10px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 2px 2px 10px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 2px 2px 10px 0px rgba(34, 60, 80, 0.2);
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row p,
+section.admin .container section.content .applicationAbout .applicationAbout__row a{
+    margin: 0;
+    font-family: var(--font-2);
+    font-size: 1.2rem;
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row p{
+    margin-right: 1rem;
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row a{
+    text-decoration: none;
+    padding: .5rem;
+    border-radius: 10px;
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row p:first-child{
+    font-weight: 700;
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row p:last-child{
+    margin-right: .5rem;
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row.submit{
+    justify-content: center;
+    background: none;
+    padding: 0;
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row.submit img{
+    width: 3rem;
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row.goods a{
+    padding: 0;
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row.goods a:hover{
+    background: var(--color-5);
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row.goods img{
+    width: 2rem;
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row.submit button
+,section.admin .container section.content #addgoods .form__block button{
+    padding: .5rem 2rem;
+    color: var(--color-5);
+    background-color: #54e03f;
+    border-radius: 10px;
+    font-weight: 600;
+    font-family: var(--font-1);
+    font-size: 1.2rem;
+    border: none;
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row.submit button.delete{
+    background-color: var(--color-3);
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row .photo{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row.change .photo{
+    position: relative;
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row.change .photo::after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row.photo .change{
+    display: flex;
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row.photo .change a{
+    cursor: pointer;
+    transition: all .5s ease;
+    margin-left: 1rem;
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row.photo .change input{
+    display: none;
+    transition: all .5s ease;
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row.photo .change input.active{
+    display: unset;
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row.photo img{
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: 10px;
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row input,
+section.admin .container section.content .applicationAbout .applicationAbout__row textarea,
+section.admin .container section.content .applicationAbout .applicationAbout__row select{
+    flex: 1 1 auto;
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row input,
+section.admin .container section.content .applicationAbout .applicationAbout__row select{
+    max-width: 50%;
+    text-align: center;
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row textarea{
+    min-height: 10rem;
+}
+section.admin .container section.content #addgoods form,
+section.admin .container section.content #goods form{
+    width: 100%;
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row.sizes{
+    display: none;
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row.sizes.active{
+    display: flex;
+}
+section.admin .container section.content #addgoods .form__block{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: .5rem;
+    background-color: var(--color-5);
+    margin-top: 1rem;
+    border-radius: 10px;
+}
+section.admin .container section.content #addgoods .form__block input,
+section.admin .container section.content #addgoods .form__block textarea,
+section.admin .container section.content #addgoods .form__block select,
+section.admin .container section.content .applicationAbout .applicationAbout__row input,
+section.admin .container section.content .applicationAbout .applicationAbout__row textarea,
+section.admin .container section.content .applicationAbout .applicationAbout__row select{
+    border-radius: 10px;
+    background-color: var(--color-5);
+    padding: .5rem;
+    border: none;
+    -webkit-box-shadow: 0px 0px 10px -1px rgba(34, 60, 80, 0.2) inset;
+    -moz-box-shadow: 0px 0px 10px -1px rgba(34, 60, 80, 0.2) inset;
+    box-shadow: 0px 0px 10px -1px rgba(34, 60, 80, 0.2) inset;
+    font-family: var(--font-2);
+}
+section.admin .container section.content #addgoods .form__block label.main{
+    font-family: var(--font-2);
+    margin-bottom: .2rem;
+}
+section.admin .container section.content #addgoods .form__block.sizes{
+    display: none;
+}
+section.admin .container section.content #addgoods .form__block.sizes.active{
+    display: flex;
+}
+section.admin .container section.content #addgoods .form__block.sizes .inputs,
+section.admin .container section.content .applicationAbout .applicationAbout__row .inputs{
+    display: flex;
+}
+section.admin .container section.content #addgoods .form__block.sizes .inputs .input,
+section.admin .container section.content .applicationAbout .applicationAbout__row .inputs .input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section.admin .container section.content #addgoods .form__block.sizes .inputs .input input,
+section.admin .container section.content .applicationAbout .applicationAbout__row .inputs .input input{
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row .inputs .input input{
+    flex: unset;
+    max-width: unset;
+}
+section.admin .container section.content .applicationAbout .applicationAbout__row .inputs .input:not(:last-child){
+    margin-right: 1rem;
+}
+section.admin .container section.content #addgoods .form__block.sizes .inputs .input label,
+section.admin .container section.content .applicationAbout .applicationAbout__row .inputs .input label{
+    font-size: 1.4rem;
+    font-family: var(--font-2);
+    font-weight: 500;
+    text-align: center;
+}
+section.admin .container section.content #addgoods .form__block.sizes .inputs .input:not(:first-child){
+    margin-left: 1rem;
+}
+section.admin .container section.content #addgoods .form__block.sizes .inputs .input.nosize{
+    margin-left: auto;
+}
+section.admin .container section.content #addgoods .form__block button{
+    margin: 0 auto;
+}
+
+footer{
+    background-color: var(--color-2);
+}
+footer .container{
+    padding: 1rem 0;
+}
+footer .head{
+    border-bottom: .05rem solid #6dc2ff;
+}
+footer .head .container{
+    padding: 2rem 0;
+    display: flex;
+    color: var(--color-5);
+}
+footer .head .container .head__block{
+    flex: 1;
+}
+footer .head .container .head__block.logo{
+    flex: 2;
+}
+footer .head .container .head__block .title{
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: var(--font-2);
+    border-bottom: .1rem solid #6dc2ff;
+}
+footer .head .container .head__block ul{
+    padding: 0 0 0 .5rem;
+    margin: 0;
+    margin: 1rem 0 0;
+}
+footer .head .container .head__block ul li:not(:first-child){
+    margin-top: .5rem;
+}
+footer .head .container .head__block:not(:first-child){
+    margin-left: 2rem;
+}
+footer .head .container .head__block ul li a{
+    color: var(--color-5);
+    font-family: var(--font-2);
+    display: flex;
+}
+footer .head .container .head__block p{
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin: 1rem 0 0;
+    font-family: var(--font-2);
+}
+footer .head .container .head__block a.navbar-brand{
+    margin: 0;
+    padding: 0;
+}
+footer .body p{
+    text-align: center;
+    color: var(--color-5);
+    margin: 0;
+    font-family: var(--font-1);
+}
