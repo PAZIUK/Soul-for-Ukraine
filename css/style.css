@@ -21,6 +21,7 @@ body {
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 main{
@@ -44,6 +45,8 @@ header{
 header .container nav{
     display: flex;
     justify-content: space-between;
+    position: relative;
+    background-color: var(--color-2);
 }
 header .container nav a.navbar-brand,
 footer .head .container .head__block a.navbar-brand{
@@ -83,6 +86,8 @@ header .container nav ul.menu li a{
 }
 header .container nav .toggle{
     display: none;
+    margin-left: 1rem;
+    cursor: pointer;
 }
 header .container nav .actions{
     display: flex;
@@ -219,7 +224,7 @@ section.hello .blur{
 section.hello .container{
     display: flex;
     justify-content: flex-end;
-    padding-top: 2rem;
+    padding: 2rem .8rem 2rem;
     align-items: flex-start;
     flex: 1 1 auto;
 }
@@ -280,7 +285,7 @@ section.shop .container .shopBlock{
     flex-direction: column;
 }
 section.shop .container{
-    padding: 0 0 2rem;
+    padding: 0 .8rem 2rem;
 }
 section.shop .container .filters form{
     display: flex;
@@ -428,6 +433,9 @@ section.contacts .container .block .contacts__block{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+section.contacts .container .block .contacts__block:not(:first-child){
+    margin-left: 1.5rem;
 }
 section.contacts .container .block .contacts__block ul{
     display: flex;
@@ -720,6 +728,7 @@ section.cart .container table tfoot tr td{
     font-weight: 700;
     font-family: var(--font-1);
     font-size: 1.3rem;
+    align-items: center;
 }
 section.cart .container table tbody tr td.quantity{
     font-size: 1.5rem;
@@ -1482,6 +1491,7 @@ section.admin .container section.content .applicationAbout .applicationAbout__ro
 }
 section.admin .container section.content .applicationAbout .applicationAbout__row.photo .change{
     display: flex;
+    justify-content: flex-end;
 }
 section.admin .container section.content .applicationAbout .applicationAbout__row.photo .change a{
     cursor: pointer;
@@ -1655,4 +1665,430 @@ footer .body p{
     color: var(--color-5);
     margin: 0;
     font-family: var(--font-1);
+}
+
+
+@media(min-width:1400px){
+    section.admin .container section.content .content__block .title{
+        font-size: 3rem;
+    }
+}
+@media(max-width:1400px){
+    section.success .container .block{
+        width: unset;
+    }
+}
+@media(max-width:1200px){
+    section.shop .container .shopBlock .products .product .product__photo{
+        min-height: 15rem;
+    }
+    section.admin .container section.content table tr td.mail{
+        display: none;
+    }
+}
+@media(max-width:992px){
+    section.admin .container .block{
+        flex-direction: column;
+    }
+    section.admin .container aside a.logo .name{
+        font-size: 2rem;
+    }
+    section.admin .container aside a.logo .name{
+        margin: 0;
+        text-align: center;
+    }
+    section.admin .container aside{
+        border-radius: 10px 10px 0 0;
+    }
+    section.admin .container section.content{
+        border-radius: 0 0 10px 10px;
+    }
+    section.admin .container aside ul.actions li{
+        max-width: 50%;
+        margin: 0 auto;
+    }
+    header .container nav ul.menu{
+        position: absolute;
+        background-color: var(--color-4);
+        top: 0;
+        right: 0;
+        width: 100%;
+        justify-content: space-around;
+        border-radius: 0 0 10px 10px;
+        opacity: 0;
+        transition: all .7s ease;
+        z-index: -1;
+        -webkit-box-shadow: -4px 4px 10px 3px rgba(255, 255, 255, 0.2);
+        -moz-box-shadow: -4px 4px 10px 3px rgba(255, 255, 255, 0.2);
+        box-shadow: -4px 4px 10px 3px rgba(255, 255, 255, 0.2);
+    }
+    header .container nav ul.menu.active{
+        top: 100%;
+        opacity: 1;
+    }
+    header .container nav ul.menu li a{
+        padding: .5rem;
+    }
+    header .container nav ul.menu li{
+        margin: 0 !important;
+    }
+    header .container nav .toggle{
+        display: flex;
+        transition: all .7s ease;
+    }
+    header .container nav .toggle.active{
+        transform: rotate(90deg);
+    }
+    header .container nav a.navbar-brand, 
+    footer .head .container .head__block a.navbar-brand{
+        margin: 0;
+    }
+    section.hello .container .hello_block .title{
+        font-size: 2rem;
+    }
+    section.hello .container .hello_block .desc{
+        font-size: 1rem;
+    }
+    section.shop .container .shopBlock .products{
+        grid-template-columns: repeat(3,1fr);
+    }
+    section.about .container .about__block, section.contacts .container .block{
+        padding: 0 .8rem;
+    }
+    section.about .container .about__block .text p{
+        font-size: 1.1rem;
+    }
+    section.order .container .order__block{
+        flex-direction: column;
+    }
+    section.order .container .order__block .shoppingCart{
+        margin: 1.5rem 0 0;
+    }
+    section.admin .container section.content table tr td.phone{
+        display: none;
+    }
+    section.admin .container section.content .applicationAbout .applicationAbout__row.photo img{
+        height: 5rem;
+        width: 5rem;
+    }
+}
+@media(max-width:768px){
+    section.admin .container section.content .applicationAbout .applicationAbout__row.photo .change{
+        flex-direction: column;
+        max-width: 50%;
+    }
+    section.admin .container section.content .applicationAbout .applicationAbout__row.photo .change input{
+        margin-bottom: 1rem;
+        max-width: unset;
+    }
+    section.admin .container section.content .applicationAbout .applicationAbout__row.photo .change a{
+        margin-left: auto;
+    }
+    section.admin .container section.content .content__block__child.passwordRecovery .passwordRecovery .inputBlock .input{
+        width: calc(100% - 2rem);
+    }
+    section.admin .container section.content .content__block__child.passwordRecovery .passwordRecovery .inputBlock p{
+        align-items: center;
+    }
+    section.hello{
+        background-position: 0;
+    }
+    footer .head .container{
+        display: grid;
+        grid-template-areas:"logo logo"
+                            "nav mis";
+        padding: 2rem .8rem 1rem;
+    }
+    footer .head .container .head__block.logo{
+        grid-area: logo;
+    }
+    footer .head .container .head__block.navigation{
+        grid-area: nav;
+        margin: .5rem 0 0;
+    }
+    footer .head .container .head__block.mission{
+        grid-area: mis;
+        margin: .5rem 0 0 2rem;
+    }
+    section.hello .container{
+        justify-content: center;
+        align-items: flex-end;
+    }
+    section.hello .container .hello_block{
+        max-width: 80%;
+    }
+    section.shop .container .shopBlock .products{
+        grid-template-columns: repeat(2,1fr);
+    }
+    section.about .container .about__block, section.contacts .container .block{
+        flex-direction: column;
+    }
+    section.about .container .title, section.contacts .container .title, section.shop .container .title, section.cart .container .title, section.order .container .title{
+        margin: 1.5rem 0 .5rem 0;
+    }
+    section.contacts .container .block .contacts__block:not(:first-child){
+        margin: .5rem 0 0;
+    }
+    section.shop .container .filters form{
+        flex-direction: column;
+    }
+    section.shop .container .filters form .filterBlock,
+    section.shop .container .filters form button{
+        margin: 1rem 0 0;
+        justify-content: center;
+        border-radius: 10px;
+    }
+    section.shop .container .filters form button{
+        margin: 1rem auto 0;
+        padding: .5rem 2rem;
+    }
+    section.product .container .info .name{
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    section.product .container .info .material{
+        font-size: 1rem;
+    }
+    section.product .container .info .info_row .amount{
+        padding: 0 3rem;
+    }
+    section.product .container .info .info_row .amount span,
+    section.product .container .info .price{
+        font-size: 1.5rem;
+    }
+    section.cart .container table{
+        width: 100%;
+    }
+    section.cart .container table thead{
+        display: none;
+    }
+    section.cart .container table tr{
+        display: block;
+        margin-top: 1rem;
+    }
+    section.cart .container table tr td{
+        display: flex;
+        justify-content: space-between;
+    }
+    section.cart .container table tr td::before{
+        content: attr(data-label);
+        font-weight: bold;
+        margin-right: 1rem;
+        font-size: 1.5rem;
+    }
+    section.cart .container table tbody tr td .block{
+        width: unset;
+    }
+    section.cart .container table tfoot tr{
+        display: flex;
+        justify-content: space-between;
+    }
+    section.cart .container table tfoot tr td:not(.item){
+        padding: 0;
+    }
+    section.order .container .order__block .shoppingCart{
+        display: none;
+    }
+}
+@media(max-width:600px){
+    section.admin .container aside ul.actions li,
+    section.admin .container section.content .btns{
+        max-width: 75%;
+        width: 75%;
+    }
+    section.admin .container section.content .content__block .title{
+        margin-bottom: 1rem;
+    }
+    section.admin .container section.content #goods .title{
+        margin-bottom: 0;
+    }
+}
+@media(max-width:576px){
+    section.admin .container section.content .content__block__child{
+        flex-direction: column;
+    }
+    section.admin .container section.content .content__block__child p{
+        margin-bottom: 1rem;
+    }
+    section.admin .container section.content .content__block__child input, section.admin .container section.content .content__block__child textarea{
+        width: 100%;
+    }
+    section.admin .container section.content .content__block__child.passwordRecovery .head,
+    section.admin .container section.content .content__block__child.passwordRecovery .passwordRecovery .inputBlock{
+        flex-direction: column;
+        align-items: center;
+    }
+    section.admin .container section.content form#personalSettings a.passwordRecoveryOpen{
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
+@media(max-width:500px){
+    section.product .container{
+        flex-direction: column;
+    }
+    section.product .container .photo{
+        margin-right: 0;
+    }
+}
+@media(max-width:480px){
+    section.admin .container section.content table tr td.name{
+        display: none;
+    }
+    section.admin .container section.content table tr td.time{
+        width: 100%;
+    }
+    section.admin .container section.content #addgoods form{
+        width: unset;
+    }
+    header .container nav{
+        flex-direction: column;
+    }
+    header .container nav a.navbar-brand, 
+    footer .head .container .head__block a.navbar-brand{
+        font-size: 1.5rem;
+    }
+    header .container nav a.navbar-brand img, 
+    footer .head .container .head__block a.navbar-brand img{
+        width: 2rem;
+    }
+    header .container nav .actions{
+        width: 100%;
+        justify-content: space-around;
+    }
+    header .container nav .actions a,
+    header .container nav .user,
+    header .container nav .toggle{
+        margin: 0;
+    }
+    header .container nav ul.menu{
+        flex-direction: column;
+    }
+    header .container nav ul.menu li a{
+        text-align: center;
+        width: 100%;
+    }
+    header .container nav .user{
+        position: unset;
+    }
+    header .container nav .user ul.userActions{
+        border-radius: 0 0 10px 10px;
+        top: 100%;
+        width: 100%;
+    }
+    footer .head .container{
+        display: flex;
+        flex-direction: column;
+    }
+    footer .head .container .head__block.mission{
+        margin-left: 0;
+    }
+    section.success .container .block .photo img{
+        width: 6rem;
+    }
+    section.success .container .block{
+        padding: .5rem;
+    }
+    section.success .container .block .title{
+        font-size: 1.5rem;
+    }
+    section.hello .container .hello_block{
+        max-width: unset;
+        width: 100%;
+    }
+    section.shop .container .shopBlock .products .product .product__photo{
+        min-height: 13rem;
+    }
+    section.contacts .container .block .contacts__block ul li a{
+        font-size: 1rem;
+    }
+    section.cart .container a.order, section.order .container .order__block .contacts form button{
+        padding: .7rem 2rem;
+    }
+    section.admin .container section.content table tr td.phone,
+    section.admin .container section.content table thead tr td.phone{
+        display: none;
+    }
+    section.admin .container section.content .applicationAbout .applicationAbout__row{
+        flex-direction: column;
+    }
+    section.admin .container section.content .applicationAbout .applicationAbout__row a,
+    section.admin .container section.content .applicationAbout .applicationAbout__row p:last-child{
+        margin: 0;
+    }
+    section.admin .container section.content .applicationAbout .applicationAbout__row p:last-child{
+        text-align: center;
+    }
+    section.admin .container section.content .applicationAbout .applicationAbout__row p{
+        margin: 0;
+    }
+    section.admin .container aside a.logo .name{
+        font-size: 1rem;
+    }
+    section.admin .container section.content #addgoods .form__block input, 
+    section.admin .container section.content #addgoods .form__block textarea, 
+    section.admin .container section.content #addgoods .form__block select, 
+    section.admin .container section.content .applicationAbout .applicationAbout__row input, 
+    section.admin .container section.content .applicationAbout .applicationAbout__row textarea, 
+    section.admin .container section.content .applicationAbout .applicationAbout__row select{
+        width: 100%;
+    }
+    section.admin .container section.content .applicationAbout .applicationAbout__row input, 
+    section.admin .container section.content .applicationAbout .applicationAbout__row select{
+        max-width: unset;
+    }
+    section.admin .container section.content .applicationAbout .applicationAbout__row.photo .photo{
+        margin-bottom: 1rem;
+    }
+    section.admin .container section.content .applicationAbout .applicationAbout__row.photo .change a{
+        margin: 0 auto;
+    }
+}   
+@media(max-width:420px){
+    section.shop .container .shopBlock .products{
+        display: flex;
+        flex-direction: column;
+    }
+    section.shop .container .shopBlock .products .product .product__photo{
+        min-height: 20rem;
+    }
+}
+@media(max-width:320px){
+    section.success .container .block{
+        margin: 0 .5rem;
+    }
+    section.hello .container .hello_block a{
+        padding: .5rem 1rem;
+    }
+    section.contacts .container .block .contacts__block ul li a img{
+        width: 1.5rem;
+    }
+    section.contacts .container .block .contacts__block.contacts ul{
+        padding: 0;
+    }
+    section.shop .container .filters form .filterBlock{
+        font-size: .9rem;
+    }
+    section.product .container .info .info_row .size{
+        grid-gap: 1rem;
+        flex-wrap: wrap;
+    }
+    section.product .container .info .info_row .size button{
+        margin: 0;
+    }
+    section.cart .container table tr td::before{
+        font-size: 1rem;
+    }
+    section.cart .container a.order, section.order .container .order__block .contacts form button{
+        padding: .7rem 1rem;
+    }
+    section.admin .container section.content .applicationAbout .applicationAbout__row a,
+    section.admin .container section.content .applicationAbout .applicationAbout__row p:last-child{
+        font-size: 1rem;
+    }
+    section.admin .container section.content #addgoods .form__block.sizes .inputs .input input, 
+    section.admin .container section.content .applicationAbout .applicationAbout__row .inputs .input input{
+        height: 1.5rem;
+        width: 1.5rem;
+    }
 }

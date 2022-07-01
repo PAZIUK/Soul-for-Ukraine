@@ -39,7 +39,7 @@
                                                     <p><?php echo $item["ShopItem_ID"]?></p>
                                                 </div>
                                                 <div class="applicationAbout__row photo">
-                                                    <p>Photo</p></p>
+                                                    <p>Photo</p>
                                                     <div class="photo"><img src="img/shop/<?php echo $item["ShopItemImages_Image"] ?>" alt=""></div>
                                                     <div class="change">
                                                         <input type="file" name="photo">

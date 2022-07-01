@@ -5,7 +5,7 @@
     require_once("models/category.php");
     require_once("models/user.php");
     require_once("models/admin.php");
-    
+
     require_once("layout/head.php");
     require_once("layout/header.php");
 

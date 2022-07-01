@@ -179,6 +179,16 @@ if(totalShoppingCart){
         nPrice+="0"
     } 
     totalShoppingCart.querySelector("tr td.total").textContent += nPrice
+
+
+    let dataLabels = ["Item","Price","Quantity","Total","Remove"]
+    let products = totalShoppingCart.parentElement.querySelectorAll("tbody tr");
+    for (let i = 0; i < products.length; i++) {
+        let tds = products[i].querySelectorAll("td")
+        for (let ind = 0; ind < tds.length; ind++) {
+            tds[ind].setAttribute("data-label",dataLabels[ind])
+        }
+    }
 }
 
 const orderShoppingCart = document.querySelector("section.order .container .order__block .shoppingCart .products")
@@ -220,3 +230,24 @@ function formSignInSubmit(event){
         localStorage.removeItem('signInEndTime')
     }
 }
+
+const toggleBtn = document.querySelector("header .container nav .toggle")
+if(toggleBtn){
+    toggleBtn.addEventListener("click",toggleFunction)
+    window.addEventListener("resize",()=>{toggleFunction("remove")})
+    window.addEventListener("scroll",()=>{toggleFunction("remove")})
+    window.addEventListener("click",(e)=>{
+        if(!e.path.includes(toggleBtn)){
+            toggleFunction("remove")
+        }
+    })
+    function toggleFunction(act){
+        if(act=="remove"){
+            toggleBtn.classList.remove("active")
+            document.querySelector("header .container nav ul.menu").classList.remove("active")
+        } else {
+            toggleBtn.classList.toggle("active")
+            document.querySelector("header .container nav ul.menu").classList.toggle("active")
+        }
+    }
+}   

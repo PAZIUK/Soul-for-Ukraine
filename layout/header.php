@@ -67,9 +67,9 @@
                         ?>
                         </ul>
                     </div>
-                </div>
-                <div class="toggle">
-                    <img src="img/config/toggleBtn.png" alt="Menu Button">
+                    <div class="toggle">
+                        <img src="img/config/toggleBtn.png" alt="Menu Button">
+                    </div>
                 </div>
             </nav>
         </div>
