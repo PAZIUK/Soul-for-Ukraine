@@ -7,6 +7,7 @@
         <?php
     }
     if(count($_POST)>0){
+        var_dump($_POST["price"]);
         ?>
             <script>
                 let cart = [];
@@ -32,7 +33,7 @@
                     cart.unshift(shopItem)
                     localStorage.setItem("cart",JSON.stringify(cart))
                 }
-                window.location.href = window.location.href
+                // window.location.href = window.location.href
             </script> 
         <?php
     }
@@ -84,7 +85,7 @@
                     <input type="hidden" name="ID" value="<?php echo $product["ShopItem_ID"]?>">
                     <input type="hidden" name="amount" value="1">
                     <input type="hidden" name="price" value="<?php echo $product["ShopItem_Price"]?>">
-                    <input type="hidden" name="total" value="$<?php echo number_format($product["ShopItem_Price"], 2, ',', ' '); ?>">
+                    <input type="hidden" name="total" value="$<?php echo number_format($product["ShopItem_Price"], 2, '.', ','); ?>">
                     <?php
                         if($product["ShopItem_Sizes"]!=null){
                         ?>
