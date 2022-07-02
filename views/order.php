@@ -1,19 +1,12 @@
-<script>
-    if(JSON.parse(localStorage.getItem("cart"))!=null){
-        $.ajax({
-            url: window.location.href,
-            method: "POST",            
-            data: {Cart:localStorage.getItem("cart")},         
-            dataType: "html",         
-            success: function (data) {
-                $('main').html($(data).filter('main').html());
-                $("body").append("<footer id='footer'>"+$(data).filter("#footer").html()+"</div>");
-            },
-        });
+<?php 
+    if(strlen($_SESSION["Cart"])>0){
+        $_POST["Cart"] = $_SESSION["Cart"];
     } else {
-        window.location.href = "index.php"
+        ?>
+            <script>window.location.href = "index.php?action=404"</script> 
+        <?php
     }
-</script>
+?>
 <main>
     <section class="order">
         <div class="container">
@@ -24,15 +17,15 @@
                     <form action="index.php?action=orderSent" method="post">
                         <div class="input_block">
                             <p class="s">First name</p>
-                            <input type="text" name="name" placeholder="Enter first name" required maxlength="32" pattern="[A-Za-z]{1,32}"> 
+                            <input type="text" name="name" placeholder="Enter first name" required maxlength="32" onkeypress="noDigits(event)"> 
                         </div>
                         <div class="input_block">
                             <p class="s">Last name</p>
-                            <input type="text" name="surname" placeholder="Enter last name" required maxlength="32" pattern="[A-Za-z]{1,32}">
+                            <input type="text" name="surname" placeholder="Enter last name" required maxlength="32" onkeypress="noDigits(event)">
                         </div>
                         <div class="input_block">
-                            <p class="s">Email</p>
-                            <input type="mail" name="mail" placeholder="Enter email" required>
+                            <p>Email</p>
+                            <input type="mail" name="mail" placeholder="Enter email">
                         </div>
                         <div class="input_block">
                             <p class="s">Phone Number</p>
@@ -90,5 +83,4 @@
             </div>
         </div>
     </section>
-    <script src='js/animation.js'></script>
 </main>

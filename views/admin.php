@@ -107,7 +107,18 @@
                                         <tr>
                                             <td style="text-align:center;"><?php echo $orders[$i]["Order_ID"]?></td>
                                             <td class="name"><?php echo $orders[$i]["Order_Name"]?></td>
-                                            <td class="mail"><a href="mailto:<?php echo $orders[$i]["Order_Mail"]?>"><?php echo $orders[$i]["Order_Mail"]?></a></td>
+                                            <td class="mail">
+                                                <?php if($orders[$i]["Order_Mail"]!=null){
+                                                    ?>
+                                                    <a href="mailto:<?php echo $orders[$i]["Order_Mail"]?>"><?php echo $orders[$i]["Order_Mail"]?></a>
+                                                    <?php
+                                                    } else {
+                                                    ?>
+                                                    Doesn`t Exist
+                                                    <?php
+                                                    }
+                                                ?>        
+                                            </td>
                                             <td class="phone"><a href="tel:<?php echo $orders[$i]["Order_Phone"]?>"><?php echo $orders[$i]["Order_Phone"]?></a></td>
                                             <td class="time">
                                                 <?php 

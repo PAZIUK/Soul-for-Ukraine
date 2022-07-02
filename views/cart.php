@@ -1,27 +1,16 @@
-<script>
-    if(JSON.parse(localStorage.getItem("cart"))!=null){
-        $.ajax({
-            url: window.location.href,
-            method: "POST",            
-            data: {Cart:localStorage.getItem("cart")},         
-            dataType: "html",         
-            success: function (data) {
-                $('main').html($(data).filter('main').html());
-                $("body").append("<footer id='footer'>"+$(data).filter("#footer").html()+"</div>");
-            },
-        });
-    } else {
-        window.location.href = "index.php"
+<?php 
+    if(isset($_SESSION["Cart"])&&strlen($_SESSION["Cart"])>0){
+        $_POST["Cart"] = $_SESSION["Cart"];
     }
-</script>
+?>
 <main>
     <section class="cart">
         <div class="container">
             <div class="title">- Shopping Cart -</div>
             <?php 
                 $ids = [];
-                $newCart = json_decode($_POST["Cart"],true);
-                if(count($newCart)>0){
+                if(count($_POST)>0){
+                    $newCart = json_decode($_POST["Cart"],true);
                     for ($i=0; $i < count($newCart); $i++) { 
                         array_push($ids,$newCart[$i]["id"]);
                     }
@@ -90,8 +79,6 @@
                     <?php
                 }
             ?>
-
-            <script src='js/animation.js'></script>
         </div>
     </section>
 </main>

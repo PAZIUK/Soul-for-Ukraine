@@ -20,8 +20,45 @@
         }
     }
     else {
-        require_once("views/main.php");
+        if(isset($_GET["redirect"])){
+            ?>
+                <script>
+                    setTimeout(() => {
+                        window.location.href = "index.php?action=<?php echo $_GET["redirect"]?>"
+                    }, 50);
+                </script> 
+            <?php
+        } else {
+            require_once("views/main.php");
+        }
     }
 
     require_once("layout/footer.php");
+    ?>
+    <script>
+        console.log(localStorage.getItem("cart"));
+        if(localStorage.getItem("cart")){
+            $.ajax({
+                url: window.location.href,
+                method: "POST",            
+                data: {Cart:localStorage.getItem("cart")},         
+                dataType: "html",         
+                success: function (data) {
+                    $('#shoppingCart').html($(data).filter('#shoppingCart').html());
+                },
+            });
+        }
+    </script>
+    <div id="shoppingCart">
+        <?php 
+            if(isset($_POST["Cart"])&&strlen($_POST["Cart"])>0){
+                $_SESSION["Cart"] = $_POST["Cart"];
+            } else {
+                if(isset($_SESSION['Cart'])){
+                    unset($_SESSION['Cart']);
+                }
+            }
+        ?>
+    </div>
+    <?php
 ?>

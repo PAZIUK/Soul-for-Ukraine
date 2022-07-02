@@ -277,6 +277,7 @@ section .container .nothingFound{
     font-size: 3rem;
     font-family: var(--font-2);
     color: var(--color-3);
+    margin-bottom: 3rem;
 }
 
 section.shop .container,
@@ -1771,6 +1772,9 @@ footer .body p{
         height: 5rem;
         width: 5rem;
     }
+    section .container .nothingFound{
+        font-size: 2rem;
+    }
 }
 @media(max-width:768px){
     section.admin .container section.content .applicationAbout .applicationAbout__row.photo .change{
@@ -2042,6 +2046,9 @@ footer .body p{
     }
     section.admin .container section.content .applicationAbout .applicationAbout__row.photo .change a{
         margin: 0 auto;
+    }
+    section .container .nothingFound{
+        font-size: 1.5rem;
     }
 }   
 @media(max-width:420px){

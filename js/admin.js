@@ -67,7 +67,7 @@ if(changePhotoBtn){
     });
 }
 
-if(document.querySelector("section.admin .container section.content")){
+if(document.querySelector("section.admin .container section.content form#personalSettings")){
     const adminPasswordRecoveryShowBtn = document.querySelector("main#admin section.content form#personalSettings a.passwordRecoveryOpen");
     const adminPasswordRecoveryBlock = document.querySelector("main#admin section.content .content__block__child.passwordRecovery .passwordRecovery");
     const adminPasswordRecoveryHead = document.querySelector("main#admin section.content .content__block__child.passwordRecovery .head");

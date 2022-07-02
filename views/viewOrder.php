@@ -122,7 +122,16 @@
                                     </div>
                                     <div class="applicationAbout__row">
                                         <p>Email</p>
-                                        <a href="mailto:<?php echo $order["Order_Mail"]?>"><?php echo $order["Order_Mail"]?></a>
+                                        <?php if($order["Order_Mail"]!=null){
+                                            ?>
+                                            <a href="mailto:<?php echo $order["Order_Mail"]?>"><?php echo $order["Order_Mail"]?></a>
+                                            <?php
+                                            } else {
+                                            ?>
+                                            <p>Doesn`t Exist</p>
+                                            <?php
+                                            }
+                                        ?>  
                                     </div>
                                     <div class="applicationAbout__row">
                                         <p>Phone</p>
