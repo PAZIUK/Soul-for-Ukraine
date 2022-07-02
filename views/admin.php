@@ -219,7 +219,7 @@
                                     </div>
                                     <div class="form__block">
                                         <label class="main">Price</label>
-                                        <input type="number" name="price" required step="0.01" placeholder="Enter price">
+                                        <input type="number" name="price" required step="0.01" placeholder="Enter price" max="999999999">
                                     </div>
                                     <div class="form__block sizes active">
                                         <label class="main">Sizes</label>

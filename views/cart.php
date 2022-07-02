@@ -48,7 +48,7 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="textCenter price">$<?php echo number_format($newCart[$ind]["price"], 2, ',', ' '); ?></td>
+                                        <td class="textCenter price">$<?php echo number_format($newCart[$ind]["price"], 2, '.', ','); ?></td>
                                         <td class="textCenter quantity"><?php echo $newCart[$ind]["amount"]?></td>
                                         <td class="textCenter total"><?php echo $newCart[$ind]["total"]?></td>
                                         <td class="textCenter remove"><img src="img/config/removeBtn.png" alt="Remove Btn"></td>

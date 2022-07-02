@@ -1,5 +1,9 @@
 "use strict"
 window.addEventListener('DOMContentLoaded', () => {
+    let formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD'
+    })
     const userActionsBtn = document.querySelector("header .container nav .user button")
     if(userActionsBtn){
         userActionsBtn.addEventListener("click",userActionsAnimation)
@@ -82,16 +86,8 @@ window.addEventListener('DOMContentLoaded', () => {
         totalPrices.forEach(item=>{
             totalPrice += +item.textContent.split("$")[1].split(",").join("");
         })
-        let nPrice = `${totalPrice/100}`
-        if(nPrice.split(".").length==1){
-            nPrice+=",00"
-        } else {
-            nPrice = nPrice.split(".").join(",")
-        }
-        if(nPrice.split(",")[1].length==1){
-            nPrice+="0"
-        } 
-        totalShoppingCart.querySelector("tr td.total").textContent += nPrice
+        let nPrice = formatter.format(totalPrice);
+        totalShoppingCart.querySelector("tr td.total").textContent = nPrice
 
 
         let dataLabels = ["Item","Price","Quantity","Total","Remove"]
@@ -116,16 +112,8 @@ window.addEventListener('DOMContentLoaded', () => {
             totalPrices.forEach(item=>{
                 totalPrice += +item.total.split("$")[1].split(",").join("");
             })
-            let nPrice = `${totalPrice/100}`
-            if(nPrice.split(".").length==1){
-                nPrice+=",00"
-            } else {
-                nPrice = nPrice.split(".").join(",")
-            }
-            if(nPrice.split(",")[1].length==1){
-                nPrice+="0"
-            } 
-            document.querySelector("section.order .container .order__block .shoppingCart .totalPrice span.num").textContent += nPrice 
+            let nPrice = formatter.format(totalPrice);
+            document.querySelector("section.order .container .order__block .shoppingCart .totalPrice span.num").textContent = nPrice 
         }
         let maxHeight = document.querySelector("section.order .container .order__block .contacts form").offsetHeight - 70;
         orderShoppingCart.style.maxHeight = maxHeight+"px";
@@ -206,15 +194,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     amount++;
                 }
             }
-            let nPrice = `$${price*amount/100}`
-            if(nPrice.split(".").length==1){
-                nPrice+=",00"
-            } else {
-                nPrice = nPrice.split(".").join(",")
-            }
-            if(nPrice.split(",")[1].length==1){
-                nPrice+="0"
-            } 
+            let nPrice = formatter.format(amount*price);
             amountOfShopItem.querySelector("span.num").textContent = amount;
             document.querySelector("section.product .container .info .price").textContent = nPrice;
 

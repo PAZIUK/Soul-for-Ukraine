@@ -24,7 +24,7 @@
                                 <a href="index.php?action=product&view=<?php echo $newShopItems[$i]["ShopItem_ID"]?>" class="product">
                                     <div class="product__photo"><img src="img/shop/<?php echo $newShopItems[$i]["ShopItemImages_Image"]?>" alt=""></div>
                                     <div class="product__title"><?php echo $newShopItems[$i]["ShopItem_Name"]?></div>
-                                    <div class="product__price">$<?php echo number_format($newShopItems[$i]["ShopItem_Price"], 2, ',', ' ');?></div>
+                                    <div class="product__price">$<?php echo number_format($newShopItems[$i]["ShopItem_Price"], 2, '.', ',');?></div>
                                 </a>
                                 <?php
                                 }

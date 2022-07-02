@@ -51,7 +51,7 @@
                             <a href="index.php?action=product&view=<?php echo $shopItems[$i]["ShopItem_ID"]?>" class="product">
                                 <div class="product__photo"><img src="img/shop/<?php echo $shopItems[$i]["ShopItemImages_Image"]?>" alt=""></div>
                                 <div class="product__title"><?php echo $shopItems[$i]["ShopItem_Name"]?></div>
-                                <div class="product__price">$<?php echo number_format($shopItems[$i]["ShopItem_Price"], 2, ',', ' ');?></div>
+                                <div class="product__price">$<?php echo number_format($shopItems[$i]["ShopItem_Price"], 2, '.', ',');?></div>
                             </a>
                         <?php
                         }

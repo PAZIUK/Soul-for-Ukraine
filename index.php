@@ -36,7 +36,6 @@
     require_once("layout/footer.php");
     ?>
     <script>
-        console.log(localStorage.getItem("cart"));
         if(localStorage.getItem("cart")){
             $.ajax({
                 url: window.location.href,

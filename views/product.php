@@ -60,7 +60,7 @@
                         <span class="num">1</span>
                         <span class="b">+</span>
                     </div>
-                    <h4 class="price">$<?php echo number_format($product["ShopItem_Price"], 2, ',', ' '); ?></h4>
+                    <h4 class="price">$<?php echo number_format($product["ShopItem_Price"], 2, '.', ','); ?></h4>
                 </div>
                 <?php
                 if($product["ShopItem_Sizes"]!=null){

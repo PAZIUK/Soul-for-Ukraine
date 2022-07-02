@@ -67,7 +67,7 @@
                                     <div class="product">
                                         <div class="photo"><img src="img/shop/<?php echo $cart[$i]["ShopItemImages_Image"]?>" alt="Item photo"></div>
                                         <div class="name"><?php echo mb_strimwidth($cart[$i]["ShopItem_Name"], 0, 30,"..")?></div>
-                                        <div class="price">$<?php echo number_format($newCart[$ind]["price"], 2, ',', ' '); ?></div>
+                                        <div class="price">$<?php echo number_format($newCart[$ind]["price"], 2, '.', ','); ?></div>
                                         <div class="amount"><?php echo $newCart[$ind]["amount"]?></div>
                                         <div class="total"><?php echo $newCart[$ind]["total"]?></div>
                                     </div>
