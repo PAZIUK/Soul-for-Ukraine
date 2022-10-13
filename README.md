@@ -1,4 +1,4 @@
-# Soul-for-Ukraine - Project Description <br>
+# Soul for Ukraine - Project Description <br>
 
 ### About <br/>
 
