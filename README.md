@@ -4,7 +4,7 @@
 
 Soul for Ukraine - Do you have a business, event, or team that needs high quality tees? This is the perfect deal to make sure you have the shirts you needed.</br>
 
-### Link to the website you can find [here](https://github.com/PAZIUK/PAZIUK/blob/main/README.md#my-projects)<br/>
+### Link to the website you can find [here](https://github.com/PAZIUK#-websites)<br/>
 
 ## For creating were used <br/>
 
